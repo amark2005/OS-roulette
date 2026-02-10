@@ -1,6 +1,5 @@
 from wheel import Wheel
 import time
-
 a=Wheel()
 print("****Picker Wheel****")
 a.getdata()
