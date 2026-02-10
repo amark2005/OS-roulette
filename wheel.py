@@ -10,15 +10,6 @@ class wheel:
         pass
     def getdata(self):
         while True:
-            a=1
-            x=input("Enter the datas: ")
-            if a == 1:
-                self.data.append(x)
-            elif x == None:
-                a=0
-                pass
-    def getdata(self):
-        while True:
             x=input("Enter the datas: ")
             if not x:
                 break
