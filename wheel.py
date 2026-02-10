@@ -31,8 +31,9 @@ class wheel:
         self.l3_result=max(set(self.l3),key=self.l3.count)
         self.l3_lose=min(set(self.l3),key=self.l3.count)
         self.finale.append(self.l3_result)
-        self.
+        self.data.remove(self.l3_lose)
         print(f"Level 3 Winner is {self.l3_result}")
+        print(self.data)
         
         
         
