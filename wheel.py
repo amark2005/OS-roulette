@@ -32,7 +32,7 @@ class wheel:
     def level2(self):
         for i in range(0,rand.randint(7,15)):
             self.l2.append(rand.choice(self.data))
-            print(self.l2)
+        print(self.l2)
             
             
         pass
