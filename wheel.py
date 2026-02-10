@@ -32,9 +32,14 @@ class wheel:
     def level2(self):
         for i in range(0,rand.randint(7,15)):
             self.l2.append(rand.choice(self.data))
+        self.l2_result=max(set(self.l2),key=self.l2.count)
+        l2_lose=min(set(self.l2),key=self.l2.count)
+        self.data.remove(l2_lose)
+        self.finale.append(self.l2_result)
         print(self.l2)
-            
-            
+        print(f"Level 2 Winner is {self.l2_result}")
+        print(self.data)
+                    
         pass
         
         
