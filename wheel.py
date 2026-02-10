@@ -1,16 +1,11 @@
 import random as rand
 class wheel:
-    data=[1,2,3,4]
+    data=list()
     l3=list()
     l3_result=None
     finale=list()
     l2=list()
     l2_result=None
-    def __init__(self):
-        #self.getdata()
-        #self.level3()
-        self.level2()
-        pass
     def getdata(self):
         while True:
             x=input("Enter the datas: ")
@@ -20,10 +15,14 @@ class wheel:
         pass
     def level3(self):
         for i in range(0,rand.randint(30,50)):
-            self.l3.append(rand.choice(self.data))
-        print(self.l3)
+            a=rand.choice(self.data)
+            print(a)
+            self.l3.append(a)
         self.l3_result=max(set(self.l3),key=self.l3.count)
+        print(f"The maximum count: {self.l3_result}")
         l3_lose=min(set(self.l3),key=self.l3.count)
+        print(f"The minimum count: {l3_lose}")
+        print(f"{l3_lose} Removed")
         self.finale.append(self.l3_result)
         self.data.remove(l3_lose)
         print(f"Level 3 Winner is {self.l3_result}")
@@ -36,11 +35,13 @@ class wheel:
         l2_lose=min(set(self.l2),key=self.l2.count)
         self.data.remove(l2_lose)
         self.finale.append(self.l2_result)
-        print(self.l2)
         print(f"Level 2 Winner is {self.l2_result}")
-        print(self.data)
-                    
         pass
+    
+    def finale_round(self):
+        fin=rand.choice(self.finale)
+        return fin
+    
         
         
         
