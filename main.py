@@ -1,25 +1,27 @@
-from wheel import wheel
+from wheel import Wheel
 import time
 
-a=wheel()
+a=Wheel()
 print("****Picker Wheel****")
 a.getdata()
 print(f"{len(a.data)} Datas entered")
 print(f"{a.data}")
-input("press Enter to run Round 3")
-print("Starting Round 3")
-time.sleep(0.5)
-a.level3()
-input("Press enter to run Round 2")
-print("Starting Round 2")
-time.sleep(0.5)
-a.level2()
+a.roundy=len(a.data)+4
+while True:
+    input("press Enter to Spin the Wheel")
+    print("Spinning....")
+    time.sleep(0.5)
+    a.levelx()
+    print(f"Now we have {len(a.data)} choices left")
+    print(a.data)
+    a.roundy-=1
+    if len(a.data) == 1:
+        break
 print()
-print(f"Now we have {len(a.data)} choices left")
-print(a.finale)
-input("Press enter to run finale round")
+input("Press enter to see who won...")
 for i in range(2):
     print("Calculating....")
-    time.sleep(1.5)
+    time.sleep(0.5)
 print(f"The Winner is {a.finale_round()}")
+
 
