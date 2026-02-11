@@ -1,27 +1,30 @@
-from wheel import Wheel
-import time
-a=Wheel()
-print("****Picker Wheel****")
-a.getdata()
-print(f"{len(a.data)} Datas entered")
-print(f"{a.data}")
-a.roundy=len(a.data)-1
-while True:
-        
-    input("press Enter to Spin the Wheel")
-    print("Spinning....")
-    time.sleep(0.5)
-    a.levelx()
-    for i in a.data:
-        print(f"The Winner is {i}")    
-        a.roundy-=1
-    else:
-        break
-a.roundy=None
-#input("Press enter to see who won...")
-#for i in range(2):
-    #print("Calculating....")
-    #time.sleep(0.5)
-#print(f"The Winner is {a.finale_round()}")
+import random
 
-
+def main():
+    os_list = ["amar", "vicky", "pradeep"]
+    a = ""
+    selectx = []
+    try:
+        player = int(input("Enter the number of players: "))
+    except ValueError:
+        print("Please enter a valid number.")
+        return
+    while True:
+        print("Enter the OS: ")
+        a = input()
+        if not a:
+            break
+        os_list.append(a)
+    print("the os list is...")
+    for i in os_list:
+        print(i)
+    while True:
+        index = random.randint(0, len(os_list) - 1)
+        selectx.append(os_list[index])
+        if len(selectx) >= player:
+            break
+    for i in selectx:
+        print(f"The selected ones are: {i}")
+    selectx = list(set(selectx))
+if __name__ == "__main__":
+    main()
