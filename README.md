@@ -1,2 +1,3 @@
 # The code is messed up and it needs optimization
 ## im currently halting the development process of `OS-roulette`
+> Might use `collections` module to rebuild the entire algorithm
